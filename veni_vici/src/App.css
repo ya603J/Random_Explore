@@ -1,0 +1,239 @@
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.app-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1579541637431-4e3cd6f6fe21?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.content-wrapper {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.main-content {
+  flex: 3;
+  padding: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ban-section {
+  flex: 1;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+h2 {
+  margin-top: 0;
+  font-weight: 400;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: #ccc;
+  font-style: italic;
+}
+
+.art-display {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.art-image {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.art-image:hover {
+  transform: scale(1.02);
+}
+
+.art-info {
+  text-align: left;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.art-info h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+
+.art-info p {
+  margin: 0.5rem 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.discover-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.discover-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.discover-button:disabled {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.ban-section h2 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.ban-section p {
+  color: #ccc;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.empty-ban-list {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.clickable {
+  cursor: pointer;
+  padding: 2px 6px;
+  margin-left: 5px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s;
+}
+
+.clickable:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.clickable.banned {
+  background-color: rgba(255, 100, 100, 0.3);
+  text-decoration: line-through;
+}
+
+.banned-attributes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.banned-attributes li {
+  background-color: rgba(255, 100, 100, 0.2);
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid rgba(255, 100, 100, 0.3);
+  transition: all 0.2s;
+}
+
+.banned-attributes li:hover {
+  background-color: rgba(255, 100, 100, 0.3);
+}
+
+.ban-type {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 3px 6px;
+  border-radius: 3px;
+  margin-right: 8px;
+}
+
+.remove-icon {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+}
+
+.error {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .ban-section {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
